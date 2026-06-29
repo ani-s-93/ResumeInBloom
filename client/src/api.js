@@ -1,5 +1,5 @@
 import axios from "axios";
 
 export default axios.create({
-    baseURL: "https://resumeinbloom.onrender.com"
+    baseURL: "https://resumeinbloom.onrender.com/api"
 });
