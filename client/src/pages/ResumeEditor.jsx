@@ -3,86 +3,75 @@ import html2canvas from "html2canvas";
 import "./ResumeEditor.css";
 import ResumeForm from "../components/ResumeForm";
 import ResumePreview from "../components/ResumePreview";
-import { useEffect, useState } from "react";
+import { useEffect, useState, useCallback } from "react";
 import { useParams } from "react-router-dom";
 import api from "../api";
 
 function ResumeEditor() {
-    const { id } = useParams();
-    // eslint-disable-next-line react-hooks/exhaustive-deps
-    useEffect(() => {
+  const { id } = useParams();
 
-    fetchResume();
+  const [resume, setResume] = useState({
+    title: "",
+    fullName: "",
+    email: "",
+    phone: "",
+    summary: "",
 
-}, []);
+    skills: [],
 
-    const [resume, setResume] = useState({
+    education: [
+      {
+        college: "",
+        degree: "",
+        cgpa: "",
+      },
+    ],
 
-        fullName: "",
-        email: "",
-        phone: "",
-        summary: "",
+    projects: [
+      {
+        title: "",
+        description: "",
+        techStack: "",
+      },
+    ],
 
-        skills: [],
+    experience: [
+      {
+        company: "",
+        role: "",
+        duration: "",
+        description: "",
+      },
+    ],
+  });
 
-        education: [
-            {
-                college: "",
-                degree: "",
-                cgpa: ""
-            }
-        ],
+  const [ats, setATS] = useState(null);
 
-        projects: [
-            {
-                title: "",
-                description: "",
-                techStack: ""
-            }
-        ],
-
-        experience: [
-            {
-                company: "",
-                role: "",
-                duration: "",
-                description: ""
-            }
-        ]
-
-    });
-    const fetchResume = async () => {
-
+  const fetchResume = useCallback(async () => {
     try {
+      const token = localStorage.getItem("token");
 
-        const token = localStorage.getItem("token");
+      const response = await api.get(`/resumes/${id}`, {
+        headers: {
+          Authorization: `Bearer ${token}`,
+        },
+      });
 
-        const response = await api.get(
-            `/resumes/${id}`,
-            {
-                headers: {
-                    Authorization: `Bearer ${token}`
-                }
-            }
-        );
-
-        setResume(response.data);
-
+      setResume(response.data);
     } catch (error) {
-
-        console.log(error);
-
+      console.log(error);
     }
+  }, [id]);
 
-};
+  useEffect(() => {
+    fetchResume();
+  }, [fetchResume]);
 
-    const [ats, setATS] = useState(null);
-    const downloadPDF = async () => {
-
+  const downloadPDF = async () => {
     const input = document.getElementById("resume-preview");
 
     const canvas = await html2canvas(input, {
-        scale: 2
+      scale: 2,
     });
 
     const imgData = canvas.toDataURL("image/png");
@@ -91,76 +80,55 @@ function ResumeEditor() {
 
     const pdfWidth = pdf.internal.pageSize.getWidth();
 
-    const pdfHeight =
-        (canvas.height * pdfWidth) / canvas.width;
+    const pdfHeight = (canvas.height * pdfWidth) / canvas.width;
 
-    pdf.addImage(
-        imgData,
-        "PNG",
-        0,
-        0,
-        pdfWidth,
-        pdfHeight
-    );
+    pdf.addImage(imgData, "PNG", 0, 0, pdfWidth, pdfHeight);
 
     pdf.save(`${resume.title || "Resume"}.pdf`);
+  };
 
-};
-
-    return (
+  return (
     <div className="editor-page">
+      <div className="editor-header">
+        <input
+          className="title-input"
+          type="text"
+          placeholder="Resume Title"
+          value={resume.title}
+          onChange={(e) =>
+            setResume({
+              ...resume,
+              title: e.target.value,
+            })
+          }
+        />
 
-        <div className="editor-header">
+        <button
+          className="save-top-btn"
+          onClick={() => {
+            document.getElementById("saveResumeBtn").click();
+          }}
+        >
+          💾 Save Resume
+        </button>
 
-            <input
-                className="title-input"
-                type="text"
-                placeholder="Resume Title"
-                value={resume.title || ""}
-                onChange={(e) =>
-                    setResume({
-                        ...resume,
-                        title: e.target.value
-                    })
-                }
-            />
+        <button className="pdf-btn" onClick={downloadPDF}>
+          📄 Download PDF
+        </button>
+      </div>
 
-            <button
-                className="save-top-btn"
-                onClick={() => {
-                    document.getElementById("saveResumeBtn").click();
-                }}
-            >
-                💾 Save Resume
-            </button>
-            <button
-    className="pdf-btn"
-    onClick={downloadPDF}
->
-    📄 Download PDF
-</button>
+      <div className="editor-content">
+        <ResumeForm
+          resumeId={id}
+          resume={resume}
+          onUpdate={setResume}
+          setATS={setATS}
+        />
 
-        </div>
-
-        <div className="editor-content">
-
-            <ResumeForm
-                resumeId={id}
-                resume={resume}
-                onUpdate={setResume}
-                setATS={setATS}
-            />
-
-            <ResumePreview
-                resume={resume}
-                ats={ats}
-            />
-
-        </div>
-
+        <ResumePreview resume={resume} ats={ats} />
+      </div>
     </div>
-);
-
+  );
 }
 
 export default ResumeEditor;
