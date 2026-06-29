@@ -1,0 +1,120 @@
+body {
+    margin: 0;
+    background: #FFF8F3;
+    font-family: 'Poppins', sans-serif;
+    overflow-x: hidden;
+}
+
+.signup-page {
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+}
+
+.blob {
+    position: absolute;
+    border-radius: 50%;
+    filter: blur(6px);
+    animation: float 8s ease-in-out infinite;
+}
+
+.blob1 {
+    width: 260px;
+    height: 260px;
+    background: #FFDDE6;
+    top: -70px;
+    left: -70px;
+}
+
+.blob2 {
+    width: 230px;
+    height: 230px;
+    background: #FCE2BE;
+    bottom: -70px;
+    right: -70px;
+    animation-delay: 2s;
+}
+
+.signup-card {
+    width: 440px;
+    background: white;
+    padding: 45px;
+    border-radius: 32px;
+    box-shadow: 0 20px 50px rgba(0,0,0,.08);
+    z-index: 2;
+}
+
+.brand {
+    font-family: 'DM Serif Display', serif;
+    font-size: 52px;
+    text-align: center;
+    color: #9A2849;
+    margin: 0;
+}
+
+.tagline {
+    text-align: center;
+    color: #866772;
+    margin-bottom: 30px;
+}
+
+.signup-card h2 {
+    text-align: center;
+    color: #7A223F;
+    font-family: 'DM Serif Display', serif;
+}
+
+.signup-card input {
+    width: 100%;
+    box-sizing: border-box;
+    margin-top: 18px;
+    padding: 16px;
+    border-radius: 16px;
+    border: 2px solid #F5DCE5;
+    font-size: 16px;
+}
+
+.signup-card input:focus {
+    outline: none;
+    border-color: #C63B61;
+}
+
+.signup-card button {
+    width: 100%;
+    margin-top: 25px;
+    padding: 16px;
+    border: none;
+    border-radius: 18px;
+    background: #C63B61;
+    color: white;
+    font-size: 17px;
+    cursor: pointer;
+    transition: .3s;
+}
+
+.signup-card button:hover {
+    transform: translateY(-4px);
+}
+
+.signup-card p {
+    text-align: center;
+    margin-top: 20px;
+}
+
+.signup-card a {
+    color: #C63B61;
+    text-decoration: none;
+    font-weight: 600;
+}
+
+@keyframes float {
+
+    0% { transform: translateY(0px); }
+
+    50% { transform: translateY(-18px); }
+
+    100% { transform: translateY(0px); }
+
+}

@@ -1,0 +1,5 @@
+node_modules/
+.env
+*.zip
+client/build/
+server/node_modules/

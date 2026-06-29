@@ -1,0 +1,141 @@
+.resume-form{
+
+    width:48%;
+
+    background:#FFFDFB;
+
+    padding:35px;
+
+    border-radius:30px;
+
+    box-shadow:0 15px 35px rgba(0,0,0,.08);
+
+}
+
+.resume-form h2{
+
+    font-family:'DM Serif Display',serif;
+
+    color:#8D2338;
+
+    font-size:42px;
+
+    margin-bottom:30px;
+
+}
+
+.form-section{
+
+    background:#FFF8F3;
+
+    border-radius:24px;
+
+    padding:25px;
+
+    margin-bottom:25px;
+
+    border:2px solid #FFE3EA;
+
+}
+
+.form-section h3{
+
+    margin-top:0;
+
+    font-family:'DM Serif Display',serif;
+
+    color:#8D2338;
+
+}
+
+.resume-form input,
+.resume-form textarea{
+
+    width:100%;
+
+    box-sizing:border-box;
+
+    margin-top:12px;
+
+    margin-bottom:15px;
+
+    padding:15px;
+
+    border-radius:16px;
+
+    border:2px solid #F6DDE5;
+
+    font-size:15px;
+
+    transition:.25s;
+
+    font-family:Poppins,sans-serif;
+
+}
+
+.resume-form input:focus,
+.resume-form textarea:focus{
+
+    outline:none;
+
+    border-color:#C63B61;
+
+    box-shadow:0 0 0 4px rgba(198,59,97,.1);
+
+}
+
+.resume-form textarea{
+
+    resize:vertical;
+
+}
+
+.resume-form button{
+
+    background:#C63B61;
+
+    color:white;
+
+    border:none;
+
+    padding:12px 22px;
+
+    border-radius:14px;
+
+    cursor:pointer;
+
+    font-weight:600;
+
+    transition:.25s;
+
+}
+
+.resume-form button:hover{
+
+    transform:translateY(-2px);
+
+    box-shadow:0 8px 18px rgba(198,59,97,.25);
+
+}
+.form-section{
+
+    position:relative;
+}
+.form-section::before{
+
+    content:"";
+
+    width:55px;
+
+    height:6px;
+
+    background:#FFD8E2;
+
+    border-radius:999px;
+
+    position:absolute;
+
+    top:20px;
+
+    right:20px;
+}

@@ -1,0 +1,81 @@
+.editor-page{
+
+    background:#FFF8F3;
+
+    min-height:100vh;
+
+    padding:40px;
+}
+
+.editor-header{
+
+    display:flex;
+
+    justify-content:space-between;
+
+    align-items:center;
+
+    margin-bottom:35px;
+}
+
+.title-input{
+
+    width:60%;
+
+    font-size:34px;
+
+    font-family:'DM Serif Display',serif;
+
+    border:none;
+
+    background:white;
+
+    padding:20px;
+
+    border-radius:24px;
+
+    box-shadow:0 10px 30px rgba(0,0,0,.08);
+
+    color:#8D2338;
+}
+
+.title-input:focus{
+
+    outline:none;
+}
+
+.save-top-btn{
+
+    background:#C63B61;
+
+    color:white;
+
+    border:none;
+
+    padding:18px 30px;
+
+    border-radius:20px;
+
+    cursor:pointer;
+
+    font-size:17px;
+
+    transition:.3s;
+
+    box-shadow:0 12px 25px rgba(198,59,97,.25);
+
+}
+
+.save-top-btn:hover{
+
+    transform:translateY(-4px);
+}
+
+.editor-content{
+
+    display:flex;
+
+    gap:35px;
+
+    align-items:flex-start;
+}
