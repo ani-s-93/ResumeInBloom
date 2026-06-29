@@ -79,3 +79,32 @@
 
     align-items:flex-start;
 }
+.pdf-btn{
+
+    margin-left:15px;
+
+    background:#FFF;
+
+    color:#8D2338;
+
+    border:2px solid #C63B61;
+
+    padding:18px 30px;
+
+    border-radius:20px;
+
+    cursor:pointer;
+
+    font-size:17px;
+
+    transition:.3s;
+
+}
+
+.pdf-btn:hover{
+
+    background:#C63B61;
+
+    color:white;
+
+}

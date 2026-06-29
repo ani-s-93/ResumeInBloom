@@ -162,7 +162,7 @@ Resume
             </h1>
 
             <p className="subtitle">
-                Create, edit and personalize your resumes with AI magic ✨
+                Create, edit and personalize your resumes with AI magic 🌸
             </p>
 
             <button

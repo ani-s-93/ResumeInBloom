@@ -3,7 +3,10 @@ import './ResumePreview.css';
 
 function ResumePreview({ resume, ats })  {
   return (
-    <div className="resume-preview">
+    <div
+    id="resume-preview"
+    className="resume-preview"
+>
       <h2>Resume Preview</h2>
 
       <div className="resume-document">
