@@ -34,20 +34,26 @@ An AI-powered resume builder that helps users create, manage, optimize, and expo
 ---
 
 ### Dashboard
+<img width="1908" height="906" alt="image" src="https://github.com/user-attachments/assets/048de69a-0d8d-4020-957f-ddfe1b6dc558" />
 
-![Dashboard](screenshots/dashboard.png)
 
 ---
 
 ### Resume Editor
+<img width="1835" height="892" alt="image" src="https://github.com/user-attachments/assets/57f121b8-c18c-43c4-89dd-a294f831c3cb" />
 
-![Editor](screenshots/editor.png)
+<img width="1872" height="908" alt="image" src="https://github.com/user-attachments/assets/a42c0221-2bab-4e60-a210-33984c9147a5" />
+
+<img width="1895" height="902" alt="image" src="https://github.com/user-attachments/assets/daf6655e-1103-4ee8-a5c5-7abbda572c33" />
+
+<img width="1891" height="906" alt="image" src="https://github.com/user-attachments/assets/4b540d1f-68c5-4ac7-86e3-621dec342476" />
 
 ---
 
-### Resume Preview
+### PDF Export
 
-![Preview](screenshots/preview.png)
+<img width="1876" height="895" alt="image" src="https://github.com/user-attachments/assets/3684f8ca-658c-48b8-88bd-9742328fcef6" />
+
 
 ---
 
