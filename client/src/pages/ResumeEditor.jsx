@@ -9,6 +9,7 @@ import api from "../api";
 
 function ResumeEditor() {
     const { id } = useParams();
+    // eslint-disable-next-line react-hooks/exhaustive-deps
     useEffect(() => {
 
     fetchResume();
